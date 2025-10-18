@@ -1,0 +1,108 @@
+{
+  "doors": [
+	{
+	  "level": 1,
+	  "description": "Layer 1: basics",
+	  "questions": [
+		{
+		  "id": "l1q1",
+		  "question": "Double free. What happens?",
+		  "responses": [
+			{"role_hint": "good", "text": "Sometimes a crash, sometime a double crash.", "name": "<good>"},
+			{"role_hint": "impostor", "text": "It just frees it twice. Twice the freedom!", "name": "<imp1>"},
+			{"role_hint": "impostor", "text": "You free it twice, but the second one’s ignored. Like your opinion.", "name": "<imp2>"}
+		  ]
+		},
+		{
+		  "id": "l1q2",
+		  "question": "Why initialize variables?",
+		  "responses": [
+			{"role_hint": "good", "text": "Because ghosts live in uninitialized memory.", "name": "<good>"},
+			{"role_hint": "impostor", "text": "It’s optional, like taxes.", "name": "<imp1>"},
+			{"role_hint": "impostor", "text": "To make the compiler feel safe. It's all about trust.", "name": "<imp2>"}
+		  ]
+		},
+		{
+		  "id": "l1q3",
+		  "question": "What does ‘const’ really mean?",
+		  "responses": [
+			{"role_hint": "good", "text": "You can look but don’t touch. Like men with women.", "name": "<good>"},
+			{"role_hint": "impostor", "text": "It means the value never changes, unless you really need it to.", "name": "<imp1>"},
+			{"role_hint": "impostor", "text": "It just makes your code look responsible.", "name": "<imp2>"}
+		  ]
+		}
+	  ]
+	},
+	{
+	  "level": 2,
+	  "description": "Layer 2: network",
+	  "questions": [
+		{
+		  "id": "l2q1",
+		  "question": "bind() does what?",
+		  "responses": [
+			{"role_hint": "good", "text": "It ties your socket to an address. Like duct tape, but legal.", "name": "<good>"},
+			{"role_hint": "impostor", "text": "It locks your port so no one else can ping you. Ever.", "name": "<imp1>"},
+			{"role_hint": "impostor", "text": "It binds your soul to the kernel.", "name": "<imp2>"}
+		  ]
+		},
+		{
+		  "id": "l2q2",
+		  "question": "Why use TCP for chat?",
+		  "responses": [
+			{"role_hint": "good", "text": "Because missing messages kill friendships.", "name": "<good>"},
+			{"role_hint": "impostor", "text": "UDP is faster. Just send messages twice and hope for the best.", "name": "<imp1>"},
+			{"role_hint": "impostor", "text": "TCP is heavier, so it sounds more professional.", "name": "<imp2>"}
+		  ]
+		},
+		{
+		  "id": "l2q3",
+		  "question": "File descriptor = ?",
+		  "responses": [
+			{"role_hint": "good", "text": "A tiny integer with godlike powers.", "name": "<good>"},
+			{"role_hint": "impostor", "text": "The file’s real name, written in binary.", "name": "<imp1>"},
+			{"role_hint": "impostor", "text": "A fragile relic from the UNIX religion.", "name": "<imp2>"}
+		  ]
+		}
+	  ]
+	},
+	{
+	  "level": 3,
+	  "description": "Layer 3: Godot",
+	  "questions": [
+		{
+		  "id": "l3q1",
+		  "question": "queue_free() vs free()?",
+		  "responses": [
+			{"role_hint": "good", "text": "queue_free() waits politely. free() pulls the plug mid-sentence.", "name": "<good>"},
+			{"role_hint": "impostor", "text": "Both delete stuff. One’s just slower for dramatic effect.", "name": "<imp1>"},
+			{"role_hint": "impostor", "text": "queue_free() asks first. free() doesn’t believe in consent.", "name": "<imp2>"}
+		  ]
+		},
+		{
+		  "id": "l3q2",
+		  "question": "Why use signal?",
+		  "responses": [
+			{"role_hint": "good", "text": "So nodes can gossip without limits.", "name": "<good>"},
+			{"role_hint": "impostor", "text": "Because Whatsapp is a pile of shit.", "name": "<imp1>"},
+			{"role_hint": "impostor", "text": "Because polling is for soyboy.", "name": "<imp2>"}
+		  ]
+		},
+		{
+		  "id": "l3q3",
+		  "question": "Why export variables in Godot?",
+		  "responses": [
+			{"role_hint": "good", "text": "So game designers can break your game without touching code.", "name": "<good>"},
+			{"role_hint": "impostor", "text": "To show off your coding skills in the editor.", "name": "<imp1>"},
+			{"role_hint": "impostor", "text": "It turns variables into parcels.", "name": "<imp2>"}
+		  ]
+		}
+	  ]
+	}
+  ],
+  "npcs": [
+	{"role": "good", "name": "<good>"},
+	{"role": "impostor", "name": "<imp1>"},
+	{"role": "impostor", "name": "<imp2>"}
+  ]
+}

@@ -1,0 +1,39 @@
+[gd_scene load_steps=3 format=3 uid="uid://jmeuvb1mqv5u"]
+
+[ext_resource type="Script" uid="uid://bqsyd528paaxw" path="res://main.gd" id="1_ig7tw"]
+[ext_resource type="FontFile" uid="uid://cgnhguxaifghx" path="res://VT323-Regular.ttf" id="2_0xm2m"]
+
+[node name="MainScene" type="Node2D"]
+script = ExtResource("1_ig7tw")
+
+[node name="TileMap" type="TileMap" parent="."]
+format = 2
+
+[node name="NPCs" type="Node2D" parent="."]
+
+[node name="NPC1" type="CharacterBody2D" parent="NPCs"]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="NPCs/NPC1"]
+
+[node name="NPC2" type="CharacterBody2D" parent="NPCs"]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="NPCs/NPC2"]
+
+[node name="NPC3" type="CharacterBody2D" parent="NPCs"]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="NPCs/NPC3"]
+
+[node name="UI" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="CRTscreen" type="RichTextLabel" parent="UI"]
+offset_right = 40.0
+offset_bottom = 40.0
+theme_override_fonts/normal_font = ExtResource("2_0xm2m")
+theme_override_font_sizes/normal_font_size = 24
+bbcode_enabled = true
+
+[node name="Timer" type="Timer" parent="."]

@@ -1,0 +1,27 @@
+[gd_scene load_steps=3 format=3 uid="uid://cv4uir2fr6dmv"]
+
+[ext_resource type="Script" uid="uid://bx48oroii0yod" path="res://startscreen.gd" id="1_8hh42"]
+[ext_resource type="FontFile" uid="uid://cvdyr6ucfpivc" path="res://Orbitron-VariableFont_wght.ttf" id="2_nrfbx"]
+
+[node name="Start" type="CanvasLayer"]
+script = ExtResource("1_8hh42")
+
+[node name="Background" type="ColorRect" parent="."]
+offset_right = 40.0
+offset_bottom = 40.0
+color = Color(1.65302e-05, 1.65302e-05, 1.65302e-05, 1)
+
+[node name="IntroScreen" type="RichTextLabel" parent="."]
+offset_right = 40.0
+offset_bottom = 40.0
+theme_override_fonts/normal_font = ExtResource("2_nrfbx")
+theme_override_font_sizes/normal_font_size = 32
+
+[node name="StartButton" type="Button" parent="."]
+offset_right = 8.0
+offset_bottom = 8.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+
+[node name="Timer" type="Timer" parent="."]
+
+[connection signal="pressed" from="StartButton" to="." method="_on_start_button_pressed"]
