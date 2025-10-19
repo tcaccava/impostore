@@ -15,11 +15,11 @@ var glitchy_names = ["Geeno","Peeno","Neeno","Agosteeno","Abbateeno","Reeno","Le
 var npc_names = []
 
 func _ready():
-	if not FileAccess.file_exists("res://data.json"):
+	if not FileAccess.file_exists("res://assets/data.json"):
 		print("Questions not found!")
 		return
 
-	var json_text = FileAccess.get_file_as_string("res://data.json")
+	var json_text = FileAccess.get_file_as_string("res://assets/data.json")
 	var json_result = JSON.parse_string(json_text)
 	doors = json_result.result["doors"]
 	choose_questions()
