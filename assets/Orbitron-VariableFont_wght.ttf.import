@@ -2,13 +2,13 @@
 
 importer="font_data_dynamic"
 type="FontFile"
-uid="uid://cgnhguxaifghx"
-path="res://.godot/imported/VT323-Regular.ttf-a909885e332eb2f927eda9bb4af05f00.fontdata"
+uid="uid://cvdyr6ucfpivc"
+path="res://.godot/imported/Orbitron-VariableFont_wght.ttf-c83bcd37bc73387d3d96452712778321.fontdata"
 
 [deps]
 
-source_file="res://VT323-Regular.ttf"
-dest_files=["res://.godot/imported/VT323-Regular.ttf-a909885e332eb2f927eda9bb4af05f00.fontdata"]
+source_file="res://assets/Orbitron-VariableFont_wght.ttf"
+dest_files=["res://.godot/imported/Orbitron-VariableFont_wght.ttf-c83bcd37bc73387d3d96452712778321.fontdata"]
 
 [params]
 
