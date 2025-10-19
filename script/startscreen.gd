@@ -18,8 +18,8 @@ Both fight for the nuclear launch codes,
 buried deep inside Area 51 servers.
 
 Three entities are entering the bunker.
-Two are humans.
-One is... something else.
+Two are impostors...and one is
+the real good guy.
 
 You, Chief Security Officer of the base,
 are the only one who can tell who’s who.
