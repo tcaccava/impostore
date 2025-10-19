@@ -12,8 +12,12 @@ config_version=5
 
 config/name="Impostor"
 run/main_scene="uid://cv4uir2fr6dmv"
-config/features=PackedStringArray("4.4", "Forward Plus")
+config/features=PackedStringArray("4.5", "Forward Plus")
 config/icon="res://icon.svg"
+
+[autoload]
+
+Gamestate="*res://script/gamestate.gd"
 
 [display]
 

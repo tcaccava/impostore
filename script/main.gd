@@ -1,6 +1,6 @@
 extends Node2D
 
-@onready var crt_screen = $UI/CRTScreen
+@onready var crt_screen = $UI/CRTscreen
 @onready var timer = $Timer
 @onready var npcs = $NPCs.get_children()
 
@@ -21,11 +21,11 @@ func _ready():
 
 	var json_text = FileAccess.get_file_as_string("res://assets/data.json")
 	var json_result = JSON.parse_string(json_text)
-	doors = json_result.result["doors"]
+	doors = json_result["doors"]
 	choose_questions()
 	show_question(current_question)
 
-	timer.wait_time = 1.0
+	timer.wait_time = 5.0
 	timer.one_shot = false
 	timer.start()
 	timer.timeout.connect(_on_Timer_timeout)
@@ -53,6 +53,7 @@ func assign_npc_names():
 func assign_names_to_responses():
 	for door in doors:
 		for q in door["questions"]:
+			q["responses"].shuffle()
 			q["responses"][0]["name"] = npc_names[0]
 			q["responses"][1]["name"] = npc_names[1]
 			q["responses"][2]["name"] = npc_names[2]
@@ -60,10 +61,8 @@ func assign_names_to_responses():
 func show_question(index):
 	crt_screen.clear()
 	var q = doors[current_level]["questions"][index]
-	crt_screen.append_bbcode("[color=#00FF66][b]Question:[/b] " + q["question"] + "[/color]")
+	crt_screen.append_text("[color=#00FF66][b]Question:[/b] " + q["question"] + "[/color]")
 	current_response = 0
-	if is_last_question():
-		ask_good_guy()
 
 func _on_Timer_timeout():
 	if awaiting_good_guy:
@@ -71,13 +70,16 @@ func _on_Timer_timeout():
 	var q = doors[current_level]["questions"][current_question]
 	if current_response < 3:
 		var r = q["responses"][current_response]
-		crt_screen.append_bbcode("\n[color=#00FF66]" + r["name"] + ": " + r["text"] + "[/color]")
+		crt_screen.append_text("\n[color=#00FF66]" + r["name"] + ": " + r["text"] + "[/color]")
 		current_response += 1
 	else:
 		timer.stop()
 		await get_tree().create_timer(2.0).timeout
-		next_question()
-		timer.start()
+		if is_last_question():
+			ask_good_guy()
+		else:
+			next_question()
+			timer.start()
 
 func next_question():
 	current_question += 1
@@ -104,15 +106,14 @@ func is_last_question() -> bool:
 func ask_good_guy():
 	awaiting_good_guy = true
 	var q = doors[current_level]["questions"][current_question]
-	crt_screen.append_bbcode("\n\n[b]Who is the good guy?[/b]")
+	crt_screen.append_text("\n\n[b]Who is the good guy?[/b]")
 	for i in range(3):
-		crt_screen.append_bbcode("\n" + str(i+1) + ". " + q["responses"][i]["name"])
+		crt_screen.append_text("\n" + str(i+1) + ". " + q["responses"][i]["name"])
 
 func check_good_guy(index):
 	awaiting_good_guy = false
 	var q = doors[current_level]["questions"][current_question]
 	var chosen_role = q["responses"][index]["role_hint"]
 
-	var final_scene = load("res://ending.tscn").instantiate()
-	final_scene.is_victory = chosen_role == "good"
-	get_tree().change_scene_to_file("res://ending.tscn")
+	Gamestate.is_victory = chosen_role == "good"
+	get_tree().change_scene_to_file("res://scenes/ending.tscn")

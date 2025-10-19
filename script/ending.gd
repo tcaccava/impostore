@@ -10,7 +10,7 @@ func _ready():
 	final_text.modulate = Color(1,1,1,1)
 	replay_button.text = "PLAY AGAIN"
 	
-	if is_victory:
+	if Gamestate.is_victory:
 		final_text.text = "Your developer rank is legendary, and thanks to your skills, you have saved the world once again."
 	else:
 		final_text.text = "Noob. If you hadn’t wasted time playing ping pong during the piscine, the world would be safe now, dummy."

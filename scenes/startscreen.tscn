@@ -7,22 +7,21 @@
 script = ExtResource("1_m1yxm")
 
 [node name="Background" type="ColorRect" parent="."]
-anchors_preset = -1
-anchor_right = 0.997
+anchors_preset = 15
+anchor_right = 1.0
 anchor_bottom = 1.0
-offset_right = 0.759888
 grow_horizontal = 2
 grow_vertical = 2
 color = Color(1.65302e-05, 1.65302e-05, 1.65302e-05, 1)
 
 [node name="IntroScreen" type="RichTextLabel" parent="."]
-anchors_preset = -1
+anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = 711.0
-offset_top = 7.0
-offset_right = -631.0
-offset_bottom = -196.0
+offset_left = 664.0
+offset_top = 6.0
+offset_right = -678.0
+offset_bottom = -197.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_fonts/normal_font = ExtResource("2_o6o42")
@@ -31,11 +30,12 @@ bbcode_enabled = true
 horizontal_alignment = 1
 
 [node name="StartButton" type="Button" parent="."]
-offset_left = 837.0
+offset_left = 807.0
 offset_top = 901.0
-offset_right = 1152.0
+offset_right = 1122.0
 offset_bottom = 1071.0
 theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("2_o6o42")
 theme_override_font_sizes/font_size = 32
 
 [node name="Timer" type="Timer" parent="."]

@@ -3,7 +3,7 @@ extends CanvasLayer
 @onready var intro_text = $IntroScreen
 @onready var start_button = $StartButton
 
-var fade_in_time = 2.0
+var fade_in_time = 3.0
 var delay_before_button = 2.0
 var elapsed = 0.0
 var show_button = false

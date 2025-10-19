@@ -26,13 +26,11 @@ format = 2
 [node name="UI" type="Control" parent="."]
 layout_mode = 3
 anchors_preset = 0
-offset_right = 40.0
-offset_bottom = 40.0
 
 [node name="CRTscreen" type="RichTextLabel" parent="UI"]
 layout_mode = 0
-offset_right = 40.0
-offset_bottom = 40.0
+offset_right = 808.0
+offset_bottom = 553.0
 theme_override_fonts/normal_font = ExtResource("2_sugp2")
 theme_override_font_sizes/normal_font_size = 24
 bbcode_enabled = true
