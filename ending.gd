@@ -3,7 +3,7 @@ extends CanvasLayer
 @onready var final_text = $EndingText
 @onready var replay_button = $RestartButton
 
-var is_victory = true
+var is_victory
 
 func _ready():
 	final_text.bbcode_enabled = true
